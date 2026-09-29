@@ -75,9 +75,21 @@
                     <ul>
                         <li>BSc Computer Science with Artificial Intelligence (in progress)</li>
                         <li>A Levels: Economics, Computer Science, Mathematics</li>
-                        <li>IBM Incident Response and Digital Forensics</li>
+                        <li onclick="showCertificate('documents/IBM incident response.pdf')">IBM Incident Response and Digital Forensics</li>
                     </ul>
                 </section>
+
+                <!-- PDF certificate popup -->
+                <div id="certificatePopup" class="popup" onclick="closeCertificate()">
+
+                    <div class="pdf-popup-content" onclick="event.stopPropagation()">
+
+                        <span class="close" onclick="closeCertificate()">&times;</span>
+
+                        <iframe id="certificatePDF" src=""></iframe>
+
+                    </div>
+                </div>
 
                 <section>
                     <h2>Interests/Hobbies</h2>
@@ -95,7 +107,7 @@
                 <section>
                     <h2>Clothing Brand</h2>
                     <p>
-                        <a href="www.offthel34sh.com">
+                        <a href="https://www.offthel34sh.com">
                             offthel34sh.com
                         </a>
                     </p>
@@ -137,5 +149,17 @@
         </footer>
 
     </div>
+
+    <script>
+        function showCertificate(pdfPath) {
+            document.getElementById("certificatePDF").src = pdfPath;
+            document.getElementById("certificatePopup").style.display = "flex";
+        }
+
+        function closeCertificate() {
+            document.getElementById("certificatePopup").style.display = "none";
+            document.getElementById("certificatePDF").src = "";
+        }
+    </script>
 </body>
 </html>
